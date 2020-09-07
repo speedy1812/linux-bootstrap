@@ -62,8 +62,9 @@ fi
 if [ ! -d $HOME/.ssh ]; then
   bootstrap_echo "You must generate your SSH keys before continuing, otherwise
   the dotfiles will not be able to be cloned."
-  bootstrap_echo "Follow the directions at the link below:"
+  bootstrap_echo "Follow the directions at the links below:"
   bootstrap_echo "https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html"
+  bootstrap_echo "https://help.github.com/en/articles/connecting-to-github-with-ssh"
   exit 1
 fi
 
@@ -367,11 +368,7 @@ bootstrap_echo "Step 8: Installing Ruby, Node, and Postgres..."
 
 bootstrap_echo "Installing Ruby $DEFAULT_RUBY_VERSION ..."
 asdf install ruby "$DEFAULT_RUBY_VERSION"
-bootstrap_echo "Checking which Ruby & Gem installs we are using at this point..."
-echo "Ruby --> $(command -v ruby)"
-ruby -v
-echo "Gem --> $(command -v gem)"
-gem -v
+
 gem update --system
 
 gem_install_or_update() {
@@ -387,11 +384,6 @@ gem_install_or_update "bundler"
 bootstrap_echo "Installing Node $DEFAULT_NODEJS_VERSION ..."
 bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 asdf install nodejs "$DEFAULT_NODEJS_VERSION"
-bootstrap_echo "Checking which Node & NPM installs we are using at this point..."
-echo "Node --> $(command -v node)"
-node -v
-echo "NPM --> $(command -v npm)"
-npm -v
 
 npm install -g gulp-cli
 npm install -g neovim

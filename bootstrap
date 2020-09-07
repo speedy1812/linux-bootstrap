@@ -385,9 +385,6 @@ bootstrap_echo "Installing Node $DEFAULT_NODEJS_VERSION ..."
 bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 asdf install nodejs "$DEFAULT_NODEJS_VERSION"
 
-npm install -g gulp-cli
-npm install -g neovim
-
 bootstrap_echo "Installing Postgres ..."
 asdf install postgres "$DEFAULT_POSTGRES_VERSION"
 

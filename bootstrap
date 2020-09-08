@@ -26,10 +26,10 @@ bootstrap_echo() {
 ################################################################################
 
 osname=$(uname)
-DEFAULT_ASDF_VERSION="0.7.1"
-DEFAULT_RUBY_VERSION="2.6.2"
-DEFAULT_NODEJS_VERSION="8.12.0"
-DEFAULT_POSTGRES_VERSION="11.2"
+DEFAULT_ASDF_VERSION="0.8.0"
+DEFAULT_RUBY_VERSION="2.6.6"
+DEFAULT_NODEJS_VERSION="12.18.3"
+DEFAULT_POSTGRES_VERSION="12.4"
 OLD_DOTFILES_BACKUP=$HOME/old_dotfiles_backup
 
 DOTFILES_REPO_URL="git@github.com:speedy1812/dotfiles.git"
